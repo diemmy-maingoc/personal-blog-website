@@ -4,12 +4,16 @@ type BlogCardProps = {
     title: string;
     excerpt: string;
     slug: string;
+    date: string;
+    readTime: string;
 };
 
 export default function BlogCard({
                                      title,
                                      excerpt,
                                      slug,
+                                     date,
+                                     readTime,
                                  }: BlogCardProps) {
     return (
         <Link href={`/stories/${slug}`}>
@@ -18,7 +22,11 @@ export default function BlogCard({
                     {title}
                 </h2>
 
-                <p className="mt-2 text-zinc-400">
+                <p className="text-sm text-zinc-500">
+                    {date} · {readTime}
+                </p>
+
+                <p className="mt-4 text-zinc-400">
                     {excerpt}
                 </p>
             </article>
